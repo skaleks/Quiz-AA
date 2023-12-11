@@ -67,8 +67,8 @@
 }
 
 .answerButton {
-    width: 45%;
-    height: 45%;
+    width: 38%;
+    height: 39%;
     background-color: rgb(229, 221, 221);
     font-size: 30px;
     -unity-font-style: bold;

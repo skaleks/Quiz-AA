@@ -20,6 +20,7 @@ namespace Core
         private QuizUnit _currentQuizStep;
         private int _questionsCounter = 0;
         private int _correctAnswerCounter = 0;
+        
         private void Start()
         {
             var quiz =_dataDispatcher.GetQuiz();
@@ -48,12 +49,7 @@ namespace Core
 
         private void InitializeGame(List<QuizUnit> quiz)
         {
-            if (quiz == null)
-            {
-                throw new ArgumentNullException();
-            }
-
-            _quiz = quiz;
+            _quiz = quiz ?? throw new ArgumentNullException();
             _currentQuizStep = quiz[_questionsCounter];
             PrepareUI(_currentQuizStep);
         }
