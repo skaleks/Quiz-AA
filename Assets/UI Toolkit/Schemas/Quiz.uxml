@@ -1,9 +1,13 @@
-<?xml version="1.0" encoding="utf-8"?>
-<engine:UXML
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:engine="UnityEngine.UIElements"
-    xmlns:editor="UnityEditor.UIElements"
-    xsi:noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd"
->
-    
-</engine:UXML>
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement name="screen" picking-mode="Ignore" style="flex-grow: 1; flex-wrap: nowrap; align-items: center; background-color: rgb(194, 209, 208); background-image: none; -unity-background-scale-mode: stretch-to-fill;">
+        <ui:VisualElement name="question_block" picking-mode="Ignore" style="flex-basis: 50%; flex-grow: 1; width: 90%; height: 100%; flex-direction: row; flex-wrap: wrap; justify-content: center; align-items: center;">
+            <ui:Label display-tooltip-when-elided="true" name="question_text" picking-mode="Ignore" style="font-size: 30px; -unity-text-align: middle-left; color: rgb(10, 9, 9);" />
+        </ui:VisualElement>
+        <ui:VisualElement name="answers" picking-mode="Ignore" style="flex-grow: 0; flex-basis: 60%; width: 90%; height: 100%; flex-direction: row; flex-wrap: wrap; justify-content: center; align-items: center; flex-shrink: 1;">
+            <ui:Button display-tooltip-when-elided="true" name="answer_1" style="width: 45%; height: 45%; margin-left: 0; margin-right: 1%; margin-top: 0; margin-bottom: 1%; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0; border-top-left-radius: 30px; border-bottom-left-radius: 30px; border-top-right-radius: 30px; border-bottom-right-radius: 30px; background-color: rgb(229, 221, 221);" />
+            <ui:Button display-tooltip-when-elided="true" name="answer_2" style="width: 45%; height: 45%; margin-left: 1%; margin-right: 0; margin-top: 0; margin-bottom: 1%; padding-left: 5px; padding-right: 0; padding-top: 0; padding-bottom: 0; border-top-left-radius: 30px; border-bottom-left-radius: 30px; border-top-right-radius: 30px; border-bottom-right-radius: 30px; background-color: rgb(229, 221, 221);" />
+            <ui:Button display-tooltip-when-elided="true" name="answer_3" style="width: 45%; height: 45%; margin-left: 0; margin-right: 1%; margin-top: 2%; margin-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0; border-top-left-radius: 30px; border-bottom-left-radius: 30px; border-top-right-radius: 30px; border-bottom-right-radius: 30px; background-color: rgb(229, 221, 221);" />
+            <ui:Button display-tooltip-when-elided="true" name="answer_4" style="width: 45%; height: 45%; margin-left: 1%; margin-right: 0; margin-top: 2%; margin-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0; border-top-left-radius: 30px; border-bottom-left-radius: 30px; border-top-right-radius: 30px; border-bottom-right-radius: 30px; background-color: rgb(229, 221, 221);" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
