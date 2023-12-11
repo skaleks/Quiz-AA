@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Data;
+using Service;
 using UI;
 using UnityEngine;
 using Zenject;
@@ -13,6 +14,7 @@ namespace Core
         [SerializeField] private ConfirmUI _confirmUI;
         [SerializeField] private EndGameUI _endGameUI;
         [Inject] private IDataDispatcher _dataDispatcher;
+        [Inject] private SceneHandler _sceneHandler;
 
         private List<QuizUnit> _quiz;
         private QuizUnit _currentQuizStep;
@@ -72,6 +74,11 @@ namespace Core
 
         private void OnGetAnswerHandler(int answerNumber)
         {
+            if (_questionsCounter == _quiz.Count - 1)
+            {
+                _confirmUI.SetEndGameText();
+            }
+            
             if (_currentQuizStep.Answers[answerNumber].Correct)
             {
                 CorrectHandler();
@@ -95,6 +102,8 @@ namespace Core
 
         private void NextQuestion()
         {
+            _quizUI.EnableInput();
+            _quizUI.ResetVariantColor();
             _questionsCounter++;
             
             if (_questionsCounter == _quiz.Count)
@@ -109,7 +118,7 @@ namespace Core
         
         private void ExitGame()
         {
-            Application.Quit();
+            _sceneHandler.LoadScene(SCENE.MENU);
         }
     }
 }

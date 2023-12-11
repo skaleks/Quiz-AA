@@ -6,11 +6,11 @@
     -unity-font-style: bold;
     -unity-text-align: middle-center;
     white-space: normal;
-    background-color: rgba(89, 178, 48, 255);
-    border-left-color: rgba(23, 159, 22, 255);
-    border-right-color: rgba(23, 159, 22, 255);
-    border-top-color: rgba(23, 159, 22, 255);
-    border-bottom-color: rgba(23, 159, 22, 255);
+    background-color: rgb(89, 178, 48);
+    border-left-color: rgb(23, 159, 22);
+    border-right-color: rgb(23, 159, 22);
+    border-top-color: rgb(23, 159, 22);
+    border-bottom-color: rgb(23, 159, 22);
     border-left-width: 3px;
     border-right-width: 3px;
     border-top-width: 3px;
@@ -21,12 +21,57 @@
     border-bottom-right-radius: 50px;
 }
 
-.button:hover {
-    width: 45%;
-    height: 35%;
+.button:active {
+    width: 38%;
+    height: 28%;
 }
 
-.button:active {
-    width: 35%;
-    height: 25%;
+.exitButton {
+    width: 26%;
+    height: 12%;
+    border-left-width: 3px;
+    border-right-width: 3px;
+    border-top-width: 3px;
+    border-bottom-width: 3px;
+    border-left-color: rgba(5, 5, 5, 255);
+    border-right-color: rgba(5, 5, 5, 255);
+    border-top-color: rgba(5, 5, 5, 255);
+    border-bottom-color: rgba(5, 5, 5, 255);
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+}
+
+.exitButton:active {
+    width: 25%;
+    height: 11%;
+    border-left-width: 3px;
+    border-right-width: 3px;
+    border-top-width: 3px;
+    border-bottom-width: 3px;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+}
+
+.nextButton {
+    width: 65%;
+    height: 20%;
+}
+
+.nextButton:active {
+    width: 63%;
+    height: 18%;
+}
+
+.answerButton {
+    width: 45%;
+    height: 45%;
+    background-color: rgb(229, 221, 221);
+    font-size: 30px;
+    -unity-font-style: bold;
+    -unity-text-align: middle-center;
+    color: rgba(7, 7, 7, 255);
 }

@@ -21,10 +21,14 @@ namespace UI
         #endregion
 
         private readonly List<Button> _buttons = new();
+        private Button _lastPressedButton;
+        private Color _answerButtonColor = new(0.8980392f, 0.8666667f, 0.8666667f);
+        private Color _chosenAnswerButtonColor = new(0.8329477f, 0.9245283f, 0.9129996f, 0.8882353f);
         public event Action<int> OnClickAnswer1; 
         public event Action<int> OnClickAnswer2; 
         public event Action<int> OnClickAnswer3; 
-        public event Action<int> OnClickAnswer4; 
+        public event Action<int> OnClickAnswer4;
+        
         private void Awake()
         {
             _root = GetComponent<UIDocument>().rootVisualElement;
@@ -59,21 +63,25 @@ namespace UI
 
         private void AnswerClickHandler_1()
         {
+            ProcessUI(_answerButton1);
             OnClickAnswer1?.Invoke(0);
         }
 
         private void AnswerClickHandler_2()
         {
+            ProcessUI(_answerButton2);
             OnClickAnswer2?.Invoke(1);
         }
 
         private void AnswerClickHandler_3()
         {
+            ProcessUI(_answerButton3);
             OnClickAnswer3?.Invoke(2);
         }
 
         private void AnswerClickHandler_4()
         {
+            ProcessUI(_answerButton4);
             OnClickAnswer4?.Invoke(3);
         }
 
@@ -95,6 +103,34 @@ namespace UI
                 button.text = answers[index];
                 index++;
             }
+        }
+
+        private void ProcessUI(Button button)
+        {
+            button.style.backgroundColor = _chosenAnswerButtonColor;
+            _lastPressedButton = button;
+            DisableInput();
+        }
+
+        private void DisableInput()
+        {
+            foreach (var button in _buttons)
+            {
+                button.pickingMode = PickingMode.Ignore;
+            }
+        }
+        
+        public void EnableInput()
+        {
+            foreach (var button in _buttons)
+            {
+                button.pickingMode = PickingMode.Position;
+            }
+        }
+
+        public void ResetVariantColor()
+        {
+            _lastPressedButton.style.backgroundColor = _answerButtonColor;
         }
     }
 }

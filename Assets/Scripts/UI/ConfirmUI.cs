@@ -19,6 +19,9 @@ namespace UI
 
         private const string CORRECT_ANSWER = "Правильно!";
         private const string INCORRECT_ANSWER = "Неправильно!";
+        private const string QUIZ_END = "Завершить игру!";
+        private readonly Color _correctColor = new(0.5608757f, 0.8679245f, 0.6058698f, 0.8039216f);
+        private readonly Color _incorrectColor = new(0.9254902f, 0.4f, 0.3803922f, 0.8039216f);
 
         public event Action OnNextCkick;
         
@@ -55,8 +58,13 @@ namespace UI
         public void Show(bool value)
         {
             _screen.style.display = new StyleEnum<DisplayStyle>(DisplayStyle.Flex);
-            _confirmWindow.style.backgroundColor = value ? new StyleColor(Color.green) : new StyleColor(Color.red);
+            _confirmWindow.style.backgroundColor = value ? _correctColor : _incorrectColor;
             _correctText.text = value ? CORRECT_ANSWER : INCORRECT_ANSWER;
+        }
+
+        public void SetEndGameText()
+        {
+            _nextButton.text = QUIZ_END;
         }
     }
 }
