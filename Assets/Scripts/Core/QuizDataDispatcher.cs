@@ -2,15 +2,13 @@
 using System.IO;
 using Data;
 using Newtonsoft.Json;
-using UnityEditor;
 using UnityEngine;
 
 namespace Core
 {
     public class QuizDataDispatcher : IDataDispatcher
     {
-        private const string IMAGE_STORE = "Assets/Sprites/";
-        private const string QUIZ_STORE = "Assets/Data/";
+        private const string QUIZ_STORE = "Assets/Resources/Data/";
         private List<QuizUnit> _quiz;
 
         public void InitializeQuizData(string quizName)
@@ -20,7 +18,8 @@ namespace Core
 
             foreach (var unit in _quiz)
             {
-                unit.Image = AssetDatabase.LoadAssetAtPath<Sprite>(IMAGE_STORE + unit.Background);
+                var path = unit.Background.Split('.');
+                unit.Image = Resources.Load<Sprite>(path[0]); 
             }
         }
 
