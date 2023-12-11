@@ -16,7 +16,7 @@ namespace UI
 
         #endregion
 
-        private const string BYE_TEXT = "Спасибо за игру! Вы набрали: ";
+        private const string BYE_TEXT = "Спасибо за игру! Правильных ответов: ";
         public event Action OnExitCkick;
 
         private void Awake()
