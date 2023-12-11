@@ -10,7 +10,7 @@ namespace Boot
         
         private void Awake()
         {
-            _sceneHandler.LoadScene(SCENE.MAIN);
+            _sceneHandler.LoadScene(SCENE.MENU);
         }
     }
 }
