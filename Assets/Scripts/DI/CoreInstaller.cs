@@ -1,4 +1,5 @@
-﻿using Zenject;
+﻿using Service;
+using Zenject;
 
 namespace DI
 {
@@ -6,7 +7,7 @@ namespace DI
     {
         public override void InstallBindings()
         {
-            
+            Container.Bind<SceneHandler>().AsSingle();
         }
     }
 }
