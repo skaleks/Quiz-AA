@@ -87,7 +87,7 @@ namespace UI
             _question.text = question;
         }
 
-        public void SetAnswers(string[] answers)
+        public void SetAnswers(List<string> answers)
         {
             var index = 0;
             foreach (var button in _buttons)

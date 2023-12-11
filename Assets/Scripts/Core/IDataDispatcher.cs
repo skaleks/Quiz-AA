@@ -5,7 +5,7 @@ namespace Core
 {
     public interface IDataDispatcher
     {
-        void InitializeQuizData();
+        void InitializeQuizData(string quizName);
         List<QuizUnit> GetQuiz();
     }
 }

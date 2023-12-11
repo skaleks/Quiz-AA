@@ -1,4 +1,5 @@
-﻿using Service;
+﻿using Data;
+using Service;
 using UI;
 using UnityEngine;
 using Zenject;
@@ -23,7 +24,7 @@ namespace Core
 
         private void StartGame()
         {
-            _dataDispatcher.InitializeQuizData();
+            _dataDispatcher.InitializeQuizData(QUIZCONSTANTS.SIMPLE);
             _sceneHandler.LoadScene(SCENE.MAIN);
         }
     }

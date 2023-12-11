@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using UnityEngine;
 
 namespace Data
 {
@@ -8,5 +9,6 @@ namespace Data
         public string Question;
         public string Background;
         public Answer[] Answers;
+        [JsonIgnore] public Sprite Image;
     }
 }
