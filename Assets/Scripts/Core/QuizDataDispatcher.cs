@@ -13,7 +13,7 @@ namespace Core
 
         public void InitializeQuizData(string quizName)
         {
-            var jsonPath = Path.Combine(Application.streamingAssetsPath, QUIZ_STORE, quizName);
+            var jsonPath = Path.Combine(Application.streamingAssetsPath + QUIZ_STORE + quizName);
             var json = File.ReadAllText(jsonPath);
             _quiz = JsonConvert.DeserializeObject<List<QuizUnit>>(json);
 

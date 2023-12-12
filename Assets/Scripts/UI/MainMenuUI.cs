@@ -22,6 +22,7 @@ namespace UI
         {
             _root = GetComponent<UIDocument>().rootVisualElement;
             _startGame = _root.Q<Button>("start");
+            _exitGame = _root.Q<Button>("exit");
         }
 
         private void OnEnable()

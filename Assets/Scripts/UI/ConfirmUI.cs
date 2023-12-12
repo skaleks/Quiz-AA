@@ -55,11 +55,11 @@ namespace UI
             _screen.style.display = new StyleEnum<DisplayStyle>(DisplayStyle.None);
         }
 
-        public void Show(bool value)
+        public void Show(bool value, string correct = null)
         {
             _screen.style.display = new StyleEnum<DisplayStyle>(DisplayStyle.Flex);
             _confirmWindow.style.backgroundColor = value ? _correctColor : _incorrectColor;
-            _correctText.text = value ? CORRECT_ANSWER : INCORRECT_ANSWER;
+            _correctText.text = value ? CORRECT_ANSWER : $"{INCORRECT_ANSWER} {correct}";
         }
 
         public void SetEndGameText()

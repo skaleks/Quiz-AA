@@ -90,7 +90,7 @@ namespace UI
             _screen.style.backgroundImage = new StyleBackground(sprite);
         }
 
-        public void SetQuestion(string question)
+        public void SetQuestionText(string question)
         {
             _question.text = question;
         }

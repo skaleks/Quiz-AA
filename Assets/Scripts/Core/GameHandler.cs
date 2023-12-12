@@ -18,6 +18,7 @@ namespace Core
 
         private List<QuizUnit> _quiz;
         private QuizUnit _currentQuizStep;
+        private Answer _correctAnswer;
         private int _questionsCounter = 0;
         private int _correctAnswerCounter = 0;
         
@@ -51,17 +52,22 @@ namespace Core
         {
             _quiz = quiz ?? throw new ArgumentNullException();
             _currentQuizStep = quiz[_questionsCounter];
-            PrepareUI(_currentQuizStep);
+            PrepareQuestion(_currentQuizStep);
         }
 
-        private void PrepareUI(QuizUnit quiz)
+        private void PrepareQuestion(QuizUnit quiz)
         {
-            _quizUI.SetQuestion(quiz.Question);
+            _quizUI.SetQuestionText(quiz.Question);
             _quizUI.SetBackgroundImage(quiz.Image);
             
             List<string> answers = new ();
             foreach (var answer in quiz.Answers)
             {
+                if (answer.Correct)
+                {
+                    _correctAnswer = answer;
+                }
+                
                 answers.Add(answer.Text);
             }
 
@@ -93,7 +99,7 @@ namespace Core
 
         private void IncorrectHandler()
         {
-            _confirmUI.Show(false);
+            _confirmUI.Show(false, _correctAnswer.Text);
         }
 
         private void NextQuestion()
@@ -109,7 +115,7 @@ namespace Core
             }
 
             _currentQuizStep = _quiz[_questionsCounter];
-            PrepareUI(_currentQuizStep);
+            PrepareQuestion(_currentQuizStep);
         }
         
         private void ExitGame()
