@@ -8,12 +8,13 @@ namespace Core
 {
     public class QuizDataDispatcher : IDataDispatcher
     {
-        private const string QUIZ_STORE = "Assets/Resources/Data/";
+        private const string QUIZ_STORE = "/Data/";
         private List<QuizUnit> _quiz;
 
         public void InitializeQuizData(string quizName)
         {
-            var json = File.ReadAllText(QUIZ_STORE + quizName);
+            var jsonPath = Path.Combine(Application.streamingAssetsPath, QUIZ_STORE, quizName);
+            var json = File.ReadAllText(jsonPath);
             _quiz = JsonConvert.DeserializeObject<List<QuizUnit>>(json);
 
             foreach (var unit in _quiz)

@@ -1,6 +1,7 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/UI%20Toolkit/USS/Buttons.uss?fileID=7433441132597879392&amp;guid=38faa3405b6235b4484750e58eb6daa0&amp;type=3#Buttons" />
     <ui:VisualElement name="screen" picking-mode="Ignore" style="flex-grow: 1; align-items: center; justify-content: center; background-color: rgb(216, 217, 215); background-image: url(&apos;project://database/Assets/Sprites/1678025657_zefirka-club-p-nenavyazchivii-fon-62.jpg?fileID=2800000&amp;guid=43f4007879ed5db45bbae9b79035d4f5&amp;type=3#1678025657_zefirka-club-p-nenavyazchivii-fon-62&apos;);">
-        <ui:Button text="Start " display-tooltip-when-elided="false" name="start" class="button" style="bottom: 10%;" />
+        <ui:Button text="Начать!" display-tooltip-when-elided="false" name="start" class="button" style="bottom: 5%;" />
+        <ui:Button text="Выйти" display-tooltip-when-elided="true" name="exit" class="button" style="width: 35%; height: 25%; bottom: auto; background-color: rgba(102, 103, 101, 255);" />
     </ui:VisualElement>
 </ui:UXML>

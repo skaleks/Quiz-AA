@@ -15,17 +15,24 @@ namespace Core
         private void OnEnable()
         {
             _menuUI.OnStartGameClick += StartGame;
+            _menuUI.OnExitGameClick += QuitGame;
         }
 
         private void OnDisable()
         {
             _menuUI.OnStartGameClick -= StartGame;
+            _menuUI.OnExitGameClick -= QuitGame;
         }
 
         private void StartGame()
         {
             _dataDispatcher.InitializeQuizData(QUIZCONSTANTS.SIMPLE);
             _sceneHandler.LoadScene(SCENE.MAIN);
+        }
+        
+        private void QuitGame()
+        {
+            Application.Quit();
         }
     }
 }

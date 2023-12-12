@@ -11,10 +11,12 @@ namespace UI
         
         private VisualElement _root;
         private Button _startGame;
+        private Button _exitGame;
 
         #endregion
 
-        public event Action OnStartGameClick; 
+        public event Action OnStartGameClick;
+        public event Action OnExitGameClick;
 
         private void Awake()
         {
@@ -25,16 +27,23 @@ namespace UI
         private void OnEnable()
         {
             _startGame.clicked += StartGameHandler;
+            _exitGame.clicked += ExitGameHandler;
         }
 
         private void OnDisable()
         {
             _startGame.clicked -= StartGameHandler;
+            _exitGame.clicked -= ExitGameHandler;
         }
 
         private void StartGameHandler()
         {
             OnStartGameClick?.Invoke();
+        }
+        
+        private void ExitGameHandler()
+        {
+            OnExitGameClick?.Invoke();
         }
     }
 }
